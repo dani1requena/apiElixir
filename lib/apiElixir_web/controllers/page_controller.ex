@@ -6,4 +6,12 @@ defmodule ApiElixirWeb.PageController do
     # so skip the default app layout.
     render(conn, :home, layout: false)
   end
+
+  def users(conn, _params) do
+    users = [
+      %{id: 1, name: "Ardorius", password: "1234"},
+      %{id: 2, name: "MachineGunJoe", password: "1234"}
+    ]
+    json(conn, %{users: users})
+  end
 end
